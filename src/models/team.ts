@@ -1,8 +1,7 @@
-import { Player } from './player';
-
 export class Team {
     constructor
-    ( 
-        public player: Player[]
+    (
+    public teamName: string
+    // public player:Player[];
     ){}
 }
