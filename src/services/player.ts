@@ -4,6 +4,8 @@ import 'rxjs/Rx';
 import { Player } from '../models/player';
 import { Http, Response } from '@angular/http';
 
+
+
 @Injectable()
 export class PlayerService{
 

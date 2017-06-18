@@ -6,6 +6,9 @@ import { Player } from '../../models/player';
 import { PlayerService } from '../../services/player';
 import { PlayersPage } from '../players/players'
 
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 @IonicPage()
 @Component({
   selector: 'page-addplayer',

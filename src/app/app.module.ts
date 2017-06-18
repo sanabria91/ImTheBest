@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http'; 
-
+import { AngularFireModule } from 'angularfire2'; 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -25,6 +27,15 @@ import { AuthService } from '../services/auth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+export const firebaseConfig = {
+    apiKey: "AIzaSyASn_JdXFLOrhFyFP2OtS8Pu9H5QccDo60",
+    authDomain: "imthebest-2c816.firebaseapp.com",
+    databaseURL: "https://imthebest-2c816.firebaseio.com",
+    projectId: "imthebest-2c816",
+    storageBucket: "imthebest-2c816.appspot.com",
+    messagingSenderId: "298006434915"
+  };
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +55,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
